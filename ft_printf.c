@@ -44,7 +44,7 @@ int	ft_printf(const char *text, ...)
 	{
 		if (text[i] == '%')
 		{
-			if ((i < 0 && text[i - 1] == '\\') || text[i + 1] == '%')
+			if ((i > 0 && text[i - 1] == '\\') || text[i + 1] == '%')
 				ft_print_char('%');
 			else
 				ft_switch(text[i + 1], args);
